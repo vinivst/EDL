@@ -38,7 +38,7 @@ Por sua vez, a **SNOBOL** influenciou as seguintes linguagens:
     - N = 0
     - COPY   OUTPUT = INPUT           :F(DONE)
     - N = N + 1                :(COPY)
-    - DONE   OUTPUT = &#39;THERE WERE &#39; N &#39; LINES&#39;
+    - DONE   OUTPUT = 'THERE WERE ' N ' LINES'
     - END
   - Nesse exemplo, começamos a contagem de linhas na variável N em 0. A próxima declaração tem um rótulo, COPY, um corpo de declaração e um campo GOTO. É uma declaração de atribuição, e começa a execução lendo uma linha de entrada. Se INPUT for obtido com sucesso uma linha, o resultado é armazenado em OUTPUT. O campo GOTO apenas está testando a falha, então SNOBOL4 prossegue para a próxima declaração, onde N é incrementado e o GOTO incondicional transfere para a declaração COPY.
 Quando um fim de arquivo é lido, a variável INPUT emite um sinal de falha. A execução desta declaração termina imediatamente, sem executar a atribuição e transfere para a declaração rotulada como DONE. O número de linhas é exibido e o controle flui para a instrução END, interrompendo o programa.
@@ -82,7 +82,7 @@ A transferência de controle é realizada pelo comando GOTO. Ele interrompe a ex
 ![Exemplo de Controle de Fluxo Snobol4](https://github.com/vinivst/EDL/blob/master/images/exemplo_controle_de_fluxo_snobol4.png)
 
 
-No exemplo, a transferência &quot;1.&quot; ocorre apenas se houver falha na atribuição da variável &#39;NUMERO&#39;, caso contrário, a execução prossegue até o desvio incondicional &quot;2.&quot; onde retorna a execução do programa para a linha referenciada &quot;TOPO&quot;.
+No exemplo, a transferência &quot;1.&quot; ocorre apenas se houver falha na atribuição da variável 'NUMERO', caso contrário, a execução prossegue até o desvio incondicional &quot;2.&quot; onde retorna a execução do programa para a linha referenciada &quot;TOPO&quot;.
 
 ## **Exemplos de Códigos Representativos vs Python**
 
@@ -92,9 +92,9 @@ No exemplo, a transferência &quot;1.&quot; ocorre apenas se houver falha na atr
 
 #### **Snobol4:**
 
-        PATTERN = (&#39;TRUTURAS DE LINGUA&#39;) . MATCH
+        PATTERN = ('TRUTURAS DE LINGUA') . MATCH
 
-        STRING = &#39;ESTRUTURAS DE LINGUAGENS&#39;
+        STRING = 'ESTRUTURAS DE LINGUAGENS'
 
         STRING PATTERN
 
@@ -102,11 +102,11 @@ No exemplo, a transferência &quot;1.&quot; ocorre apenas se houver falha na atr
 
         END
 
-Primeiro declaramos o padrão a ser seguido em PATTERN e guardamos a ocorrência desse padrão em MATCH através de . MATCH. Depois entramos com uma string e a definimos como &#39;ESTRUTURAS DE LINGUAGENS&#39;. Feito isso, checamos através da sintaxe da linguagem SNOBOL4 com STRING PADRÃO, no caso B PATTERN, se a string em questão tem correspondência com o padrão definido. Por último apenas retornamos o valor de match na variável OUTPUT, que é especial do programa para retornar valores e exibi-los.
+Primeiro declaramos o padrão a ser seguido em PATTERN e guardamos a ocorrência desse padrão em MATCH através de . MATCH. Depois entramos com uma string e a definimos como 'ESTRUTURAS DE LINGUAGENS'. Feito isso, checamos através da sintaxe da linguagem SNOBOL4 com STRING PADRÃO, no caso B PATTERN, se a string em questão tem correspondência com o padrão definido. Por último apenas retornamos o valor de match na variável OUTPUT, que é especial do programa para retornar valores e exibi-los.
 
 #### **Python:**
 
-        pattern= &#39;TRUTURAS DE LINGUA&#39;
+        pattern= 'TRUTURAS DE LINGUA'
 
         string = &quot;ESTRUTURAS DE LINGUAGENS&quot;
 
@@ -116,21 +116,21 @@ Primeiro declaramos o padrão a ser seguido em PATTERN e guardamos a ocorrência
 
 ##### **Output em ambos será:**
 
-        &#39;TRUTURAS DE LINGUA&#39;
+        'TRUTURAS DE LINGUA'
 
 #### **Caso 2: Controle de Fluxo**
 
-#### **Objetivo: Receber dados através do input até que a entrada seja &#39;exit&#39;**
+#### **Objetivo: Receber dados através do input até que a entrada seja 'exit'**
 
 #### **Snobol4:**
 
       TOPO n = input()
 
-      DIFFER(n,&#39;exit&#39;)  :S(TOPO) F(FIM)
+      DIFFER(n,'exit')  :S(TOPO) F(FIM)
 
       FIM  END
 
-O que for entrado como dado através do input é guardado na variável n, após isso, através do comando DIFFER, que recebe dois argumentos e retorna SUCCESS se eles forem diferentes ou FAIL caso sejam iguais. Enquanto eles forem diferentes através do controle de fluxo, nosso programa será redirecionado sempre para a linha que tem a label TOPO, voltando para o início para receber novas entradas. Quando a entrada for exatamente a palavra &#39;exit&#39;, nossa função DIFFER retorna FAIL e através do controle de fluxo envia o programa para a linha com a label FIM, que nada mais faz do que encerrar a execução do mesmo.
+O que for entrado como dado através do input é guardado na variável n, após isso, através do comando DIFFER, que recebe dois argumentos e retorna SUCCESS se eles forem diferentes ou FAIL caso sejam iguais. Enquanto eles forem diferentes através do controle de fluxo, nosso programa será redirecionado sempre para a linha que tem a label TOPO, voltando para o início para receber novas entradas. Quando a entrada for exatamente a palavra 'exit', nossa função DIFFER retorna FAIL e através do controle de fluxo envia o programa para a linha com a label FIM, que nada mais faz do que encerrar a execução do mesmo.
 
 #### **Python:**
 
@@ -138,7 +138,7 @@ O que for entrado como dado através do input é guardado na variável n, após 
 
     n = raw\_input()
 
-    if n.strip() == &#39;exit&#39;:
+    if n.strip() == 'exit':
 
         break
 
