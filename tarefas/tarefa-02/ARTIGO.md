@@ -5,7 +5,7 @@
 
 A linguagem de programação SNOBOL 4 (StriNg Oriented symBOlic Language number 4), originalmente e não oficialmente chamada de  **SEXI**  e  **SCL7,** é a quarta e última encarnação de uma série de linguagens de programação específicas destinadas à manipulação de sequências de caracteres (strings). É baseada nos princípios de correspondência de padrões (pattern matching) para solucionar problemas de manipulação de seqüencias. Foi desenvolvida entre 1962 e 1967 nos Laboratórios Bell, da AT&amp;T, por D. J. Farber, R. E. Griswold, e F. P. Polensky.
 
-Seu principal diferencial com relação às outras linguagens de seu tempo foi um novo tipo de dado chamado modelo ou _&quot;first-class data type&quot;_, cujos valores podiam ser manipulados de todas as formas permitidas para todos os tipos diferentes de dados da linguagem, como se fosse um tipo de dado genérico, além disso disponibilizou operadores para concatenação e alteração de modelos. As sequências de caracteres geradas durante a execução podem ser tratadas como programas e executadas. Os modelos podem ser tão simples quanto uma sequência de texto do tipo &quot;ABCD&quot; ou tão complexos como uma nova gramática de uma nova linguagem de programação. Suas operações básicas são formação de uma string, busca de padrões e substituição de strings.
+Seu principal diferencial com relação às outras linguagens de seu tempo foi um novo tipo de dado chamado modelo ou **_first-class data type_**, cujos valores podiam ser manipulados de todas as formas permitidas para todos os tipos diferentes de dados da linguagem, como se fosse um tipo de dado genérico, além disso disponibilizou operadores para concatenação e alteração de modelos. As sequências de caracteres geradas durante a execução podem ser tratadas como programas e executadas. Os modelos podem ser tão simples quanto uma sequência de texto do tipo **ABCD** ou tão complexos como uma nova gramática de uma nova linguagem de programação. Suas operações básicas são formação de uma string, busca de padrões e substituição de strings.
 
 Foi popularmente utilizado nos anos 70 e 80 como linguagem de manipulação de textos, porém foi substituído por linguagens novas e mais eficientes como o Awk e o Perl.
 
@@ -46,20 +46,20 @@ Quando um fim de arquivo é lido, a variável INPUT emite um sinal de falha. A e
 
 
 - Interpretada:
-  - A maioria de suas implementações executam instruções diretamente, sem antes compilar um programa em instruções de linguagem de máquina. O interpretador executa o programa diretamente, traduzindo cada declaração para uma sequência de uma ou mais sub-rotinas já compiladas em código de máquina. No SNOBOL4 enquanto seu programa está sendo executado, todo o compilador SNOBOL4 está apenas a uma chamada de função. Um programa SNOBOL4 não passa de uma série de caracteres. As funções EVAL e CODE permitem que você forneça o compilador com cadeias de caracteres dentro do próprio programa.
+  - A maioria de suas implementações executam instruções diretamente, sem antes compilar um programa em instruções de linguagem de máquina. O interpretador executa o programa diretamente, traduzindo cada declaração para uma sequência de uma ou mais sub-rotinas já compiladas em código de máquina. No SNOBOL4 enquanto seu programa está sendo executado, todo o compilador SNOBOL4 está apenas a uma chamada de função. Um programa SNOBOL4 não passa de uma série de caracteres.
 - Dinâmica:
   - As variáveis não precisam ser pré-declaradas e seus valores podem mudar os tipos com facilidade. No exemplo abaixo, J começa como uma string, mas depois é alterado para que contenha um número inteiro; 42 é impresso.
-    - J = &quot;ABC&quot;
+    - J = ABC
     - A = 20
-    - B = &quot;22&quot;
+    - B = 22
     - J = A + B
     - OUTPUT = J
 
 ## **Pattern Matching (Correspondência de Padrões)**
 
-A correspondência de padrões examina uma sequência de strings para alguma combinação de caracteres, chamado de &quot;padrão&quot;. O processo de correspondência pode ser muito simples ou extremamente complexo. Por exemplo:
+A correspondência de padrões examina uma sequência de strings para alguma combinação de caracteres, chamado de padrão. O processo de correspondência pode ser muito simples ou extremamente complexo. Por exemplo:
 
-O assunto contém vários nomes de cores. O padrão é a string &quot;BLUE&quot;. A sequência do assunto contém a palavra &quot;BLUE&quot;?
+O assunto contém vários nomes de cores. O padrão é a string **BLUE**. A sequência do assunto contém a palavra **BLUE**?
 
 Um padrão de correspondência requer uma cadeia de strings e um padrão. A string é o primeiro elemento de declaração após o campo de label (se houver). O padrão aparece em seguida, separado da string por espaço em branco. Se STRING é a sequência de caracteres a ser examinada, e PATTERN é o padrão, parece assim:
 
@@ -82,7 +82,7 @@ A transferência de controle é realizada pelo comando GOTO. Ele interrompe a ex
 ![Exemplo de Controle de Fluxo Snobol4](https://github.com/vinivst/EDL/blob/master/images/exemplo_controle_de_fluxo_snobol4.png)
 
 
-No exemplo, a transferência &quot;1.&quot; ocorre apenas se houver falha na atribuição da variável 'NUMERO', caso contrário, a execução prossegue até o desvio incondicional &quot;2.&quot; onde retorna a execução do programa para a linha referenciada &quot;TOPO&quot;.
+No exemplo, a transferência **1**. ocorre apenas se houver falha na atribuição da variável 'NUMERO', caso contrário, a execução prossegue até o desvio incondicional **2**. onde retorna a execução do programa para a linha referenciada **TOPO**.
 
 ## **Exemplos de Códigos Representativos vs Python**
 
@@ -108,7 +108,7 @@ Primeiro declaramos o padrão a ser seguido em PATTERN e guardamos a ocorrência
 
         pattern= 'TRUTURAS DE LINGUA'
 
-        string = &quot;ESTRUTURAS DE LINGUAGENS&quot;
+        string = **ESTRUTURAS DE LINGUAGENS**
 
         if pattern in string:
 
@@ -146,7 +146,7 @@ O que for entrado como dado através do input é guardado na variável n, após 
 
 #### **Readability:**
 
-Python possui uma melhor Readability pois fica mais transparente à quem estiver lendo o que está sendo feito, pois tanto no primeiro caso onde temos a chamada do método &quot;in&quot; (em) que é mais natural, como se fosse uma simples leitura tanto no segundo, pois a utilização do controle de fluxo e da função DIFFER não são tão naturais e óbvias de se entender quanto um loop com while true/break no python. Reforça-se esse argumento pois em Snobol4 o padrão de STRING PATTERN pode, em um primeiro momento, confundir quem está lendo sobre o que está acontecendo.
+Python possui uma melhor Readability pois fica mais transparente à quem estiver lendo o que está sendo feito, pois tanto no primeiro caso onde temos a chamada do método **in** (em) que é mais natural, como se fosse uma simples leitura tanto no segundo, pois a utilização do controle de fluxo e da função DIFFER não são tão naturais e óbvias de se entender quanto um loop com while true/break no python. Reforça-se esse argumento pois em Snobol4 o padrão de STRING PATTERN pode, em um primeiro momento, confundir quem está lendo sobre o que está acontecendo.
 
 #### **Writability:**
 
