@@ -3,7 +3,7 @@
 
 ## **Introdução**
 
-A linguagem de programação SNOBOL 4 (StriNg Oriented symBOlic Language number 4), originalmente e não oficialmente chamada de  **SEXI**  e  **SCL7,** é a quarta e última encarnação de uma série de linguagens de programação específicas destinadas à manipulação de sequências de caracteres (strings). É baseada nos princípios de correspondência de padrões (pattern matching) para solucionar problemas de manipulação de seqüencias. Foi desenvolvida entre 1962 e 1967 nos Laboratórios Bell, da AT&amp;T, por D. J. Farber, R. E. Griswold, e F. P. Polensky.
+A linguagem de programação SNOBOL 4 (StriNg Oriented symBOlic Language number 4), originalmente e não oficialmente chamada de  **SEXI**  e  **SCL7,** é a quarta e última encarnação de uma série de linguagens de programação específicas destinadas à manipulação de sequências de caracteres (strings). É baseada nos princípios de casamento de padrões (pattern matching) para solucionar problemas de manipulação de seqüencias. Foi desenvolvida entre 1962 e 1967 nos Laboratórios Bell, da AT&amp;T, por D. J. Farber, R. E. Griswold, e F. P. Polensky.
 
 Seu principal diferencial com relação às outras linguagens de seu tempo foi um novo tipo de dado chamado modelo ou **_first-class data type_**, cujos valores podiam ser manipulados de todas as formas permitidas para todos os tipos diferentes de dados da linguagem, como se fosse um tipo de dado genérico, além disso disponibilizou operadores para concatenação e alteração de modelos. As sequências de caracteres geradas durante a execução podem ser tratadas como programas e executadas. Os modelos podem ser tão simples quanto uma sequência de texto do tipo **ABCD** ou tão complexos como uma nova gramática de uma nova linguagem de programação. Suas operações básicas são formação de uma string, busca de padrões e substituição de strings.
 
@@ -13,7 +13,7 @@ Foi popularmente utilizado nos anos 70 e 80 como linguagem de manipulação de t
 
 Foi desenvolvida entre 1962 e 1967 nos Laboratórios Bell, da AT&amp;T, por D. J. Farber, R. E. Griswold, e F. P. Polensky. Teve influências das seguintes linguagens:
 
-- **COMIT** , que foi a primeira linguagem específica para processamento de cadeias de caracteres e de correspondência de padrões, projetada para aplicações em tradução de linguagem natural, onde um programa era um conjunto de regras, cada uma com um padrão, uma substituição e outra regra.
+- **COMIT** , que foi a primeira linguagem específica para processamento de cadeias de caracteres e de casamento de padrões, projetada para aplicações em tradução de linguagem natural, onde um programa era um conjunto de regras, cada uma com um padrão, uma substituição e outra regra.
 - **MARKOV** , um algoritmo de Markov é um sistema de reescrita de seqüência de caracteres que usa regras semelhantes a gramática para operar em cadeias de símbolos. Tem poder equivalente ao de uma máquina de Turing e suas cadeias podem representar qualquer expressão matemática a partir da sua notação simples.
 - **SCL(Symbolic Communication Language)**, que foi desenvolvida para manipulação de símbolos e inspirou o pattern matching do **SNOBOL4**.
 - Além disso, pode ter tido influência também o compilador **SHADOW** que era dirigido por sintaxe. Este compilador antecipou parte da sistemática de padrões em SNOBOL e ICES. Foi utilizado por David J. Farber nos experimentos de padrões iniciais, então pode ter tido influência no SNOBOL.
@@ -55,17 +55,17 @@ Quando um fim de arquivo é lido, a variável INPUT emite um sinal de falha. A e
     - J = A + B
     - OUTPUT = J
 
-## **Pattern Matching (Correspondência de Padrões)**
+## **Pattern Matching (Casamento de Padrões)**
 
-A correspondência de padrões examina uma sequência de strings para alguma combinação de caracteres, chamado de padrão. O processo de correspondência pode ser muito simples ou extremamente complexo. Por exemplo:
+A casamento de padrões examina uma sequência de strings para alguma combinação de caracteres, chamado de padrão. O processo de casamento pode ser muito simples ou extremamente complexo. Por exemplo:
 
 O assunto contém vários nomes de cores. O padrão é a string **BLUE**. A sequência do assunto contém a palavra **BLUE**?
 
-Um padrão de correspondência requer uma cadeia de strings e um padrão. A string é o primeiro elemento de declaração após o campo de label (se houver). O padrão aparece em seguida, separado da string por espaço em branco. Se STRING é a sequência de caracteres a ser examinada, e PATTERN é o padrão, parece assim:
+Um padrão de casamento requer uma cadeia de strings e um padrão. A string é o primeiro elemento de declaração após o campo de label (se houver). O padrão aparece em seguida, separado da string por espaço em branco. Se STRING é a sequência de caracteres a ser examinada, e PATTERN é o padrão, parece assim:
 
         Label STRING PATTERN
 
-A correspondência de padrão ocorre se o padrão for encontrado na sequência da string; caso contrário, ele falha. Esse sucesso ou falha pode ser testado no campo GOTO:
+A casamento de padrão ocorre se o padrão for encontrado na sequência da string; caso contrário, ele falha. Esse sucesso ou falha pode ser testado no campo GOTO:
 
         label STRING PATTERN :S(label1) F(label2)
 
@@ -88,7 +88,7 @@ No exemplo, a transferência **1**. ocorre apenas se houver falha na atribuiçã
 
 #### **Caso 1: Pattern Matching**
 
-#### **Objetivo: Procurar por correspondência de padrões**
+#### **Objetivo: Procurar por casamento de padrões**
 
 #### **Snobol4:**
 
@@ -102,7 +102,7 @@ No exemplo, a transferência **1**. ocorre apenas se houver falha na atribuiçã
 
         END
 
-Primeiro declaramos o padrão a ser seguido em PATTERN e guardamos a ocorrência desse padrão em MATCH através de . MATCH. Depois entramos com uma string e a definimos como 'ESTRUTURAS DE LINGUAGENS'. Feito isso, checamos através da sintaxe da linguagem SNOBOL4 com STRING PADRÃO, no caso B PATTERN, se a string em questão tem correspondência com o padrão definido. Por último apenas retornamos o valor de match na variável OUTPUT, que é especial do programa para retornar valores e exibi-los.
+Primeiro declaramos o padrão a ser seguido em PATTERN e guardamos a ocorrência desse padrão em MATCH através de . MATCH. Depois entramos com uma string e a definimos como 'ESTRUTURAS DE LINGUAGENS'. Feito isso, checamos através da sintaxe da linguagem SNOBOL4 com STRING PADRÃO, no caso B PATTERN, se a string em questão tem casamento com o padrão definido. Por último apenas retornamos o valor de match na variável OUTPUT, que é especial do programa para retornar valores e exibi-los.
 
 #### **Python:**
 
@@ -158,7 +158,7 @@ Se uma linguagem exige muito código para expressar uma abstração, ela é meno
 
 ## **Conclusão**
 
-Por ser uma linguagem muito antiga, carece de suporte apropriado, seja da própria linguagem ou da comunidade (???). Apesar disso, SNOBOL4 ainda possui vantagens quando o quesito é o tratamento de strings, como por exemplo tipagem dinâmica que fora abordada anteriormente. Foi uma linguagem tão revolucionária na época que influenciou várias linguagens em gerações posteriores e ainda hoje, as linguagens mais modernas possuem algum traço de seu principal diferencial, que foi o pattern matching (correspondência de padrões).
+Por ser uma linguagem muito antiga, carece de suporte apropriado, seja da própria linguagem ou da comunidade (???). Apesar disso, SNOBOL4 ainda possui vantagens quando o quesito é o tratamento de strings, como por exemplo tipagem dinâmica que fora abordada anteriormente. Foi uma linguagem tão revolucionária na época que influenciou várias linguagens em gerações posteriores e ainda hoje, as linguagens mais modernas possuem algum traço de seu principal diferencial, que foi o pattern matching (casamento de padrões).
 
 ## **Bibliografia**
 
