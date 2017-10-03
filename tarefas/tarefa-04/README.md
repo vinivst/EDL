@@ -1,6 +1,6 @@
 ## Tarefa 04 - Joguinho ##
 
-#### Flap Bird ####
+#### Flappy Bird ####
 
 ###### Aluno: ######
 
