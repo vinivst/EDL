@@ -34,4 +34,4 @@ Project Management:
 ✓ Scrum
 
 Porém, nos últimos meses mudei meu foco e nas minhas horas livres tenho estudado bastante economia, psicologia de mercado e robôs
-de investimento, área pela qual me apaixonei e pretendo seguir.
+de investimento, área pela qual me apaixonei e pretendo seguir, inclusive já desenvolvi alguns robôs em MQL5 e gostaria de fazer meu projeto final em cima disso.
