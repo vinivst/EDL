@@ -1,0 +1,32 @@
+type Autores = [String]
+type Musica = (String, Int, Int)
+
+bandas :: [Autores]
+bandas = [ ["Gilberto Gil"], 
+           ["Victor", "Leo"],
+           ["Gonzagao"],
+           ["Claudinho", "Bochecha"]
+         ]
+
+musicas :: [Musica]
+musicas = [ ("Aquele Abraco", 1, 100),
+            ("Esperando na Janela", 1, 150),
+            ("Borboletas", 2, 120),
+            ("Asa Branca", 3, 120),
+            ("Assum Preto", 3, 200),
+            ("Vem Morena", 3, 200),
+            ("Nosso Sonho", 4, 150),
+            ("Quero te Encontrar", 4, 100)
+          ]
+
+f (x,y,z) = x
+f2 (x,y,z) = z > 120
+f3 (x,y,z) c = if z >= c then z else c
+c = 0
+
+nomeMusicas = map f musicas
+musicas2min = filter f2 musicas
+maiorDuracao = foldr f3 c musicas
+nomesMaior2min = map f musicas2min
+
+main = print ("Nome:"++ show nomeMusicas ++ "\n")
